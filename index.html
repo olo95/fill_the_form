@@ -3,43 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered Links</title>
+    <title>Random Link</title>
     <style>
         body {
-            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
         }
-
-        .links {
-            text-align: center;
-        }
-
-        .links a {
-            display: block;
-            margin: 10px 0;
-            padding: 10px 20px;
+        .link {
+            display: none;
             text-decoration: none;
-            color: white;
-            background-color: #007BFF;
+            font-size: 24px;
+            color: #007bff;
+            border: 2px solid #007bff;
+            padding: 10px 20px;
             border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s;
         }
-
-        .links a:hover {
-            background-color: #0056b3;
+        .link:hover {
+            background-color: #007bff;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <div class="links">
-        <a href="https://example.com" target="_blank">Link 1</a>
-        <a href="https://anotherexample.com" target="_blank">Link 2</a>
-    </div>
+    <!-- Two links -->
+    <a id="link1" class="link" href="https://example1.com" target="_blank">Go to Example 1</a>
+    <a id="link2" class="link" href="https://example2.com" target="_blank">Go to Example 2</a>
+
+    <script>
+        // Randomly show one link
+        const links = document.querySelectorAll('.link');
+        const randomIndex = Math.floor(Math.random() * links.length);
+        links[randomIndex].style.display = 'block';
+    </script>
 </body>
 </html>
